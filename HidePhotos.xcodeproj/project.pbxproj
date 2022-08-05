@@ -1,0 +1,517 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D44A3F33289845300043444D /* HidePhotosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A3F32289845300043444D /* HidePhotosApp.swift */; };
+		D44A3F35289845300043444D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A3F34289845300043444D /* ContentView.swift */; };
+		D44A3F37289845320043444D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44A3F36289845320043444D /* Assets.xcassets */; };
+		D44A3F3A289845320043444D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44A3F39289845320043444D /* Preview Assets.xcassets */; };
+		D44A3F43289845640043444D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A3F42289845640043444D /* Profile.swift */; };
+		D44A3F47289846110043444D /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A3F46289846110043444D /* PhotoPicker.swift */; };
+		D44A3F4A28997F4B0043444D /* HidePhoto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D44A3F4828997F4A0043444D /* HidePhoto.xcdatamodeld */; };
+		D44A3F4C28997F7A0043444D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A3F4B28997F7A0043444D /* CoreDataManager.swift */; };
+		D44A3F4F289981150043444D /* AddImageViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A3F4E289981150043444D /* AddImageViewModels.swift */; };
+		D44A3F51289981250043444D /* ImageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A3F50289981250043444D /* ImageListViewModel.swift */; };
+		D44A3F54289984D90043444D /* ImageModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A3F53289984D90043444D /* ImageModel+Extension.swift */; };
+		D44A3F562899BB520043444D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A3F552899BB520043444D /* ImagePicker.swift */; };
+		D4839C1A289B0D190082D998 /* AddFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839C19289B0D190082D998 /* AddFolderView.swift */; };
+		D4839C1C289B0DB10082D998 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839C1B289B0DB10082D998 /* Constants.swift */; };
+		D4839C1F289B0DE50082D998 /* AddFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839C1E289B0DE50082D998 /* AddFolderViewModel.swift */; };
+		D4839C23289B0EFC0082D998 /* Folder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839C22289B0EFC0082D998 /* Folder+Extension.swift */; };
+		D4839C25289B19E40082D998 /* FolderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839C24289B19E40082D998 /* FolderListViewModel.swift */; };
+		D4839C29289B1B370082D998 /* FoldersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839C28289B1B370082D998 /* FoldersListView.swift */; };
+		D4839C2D289B23650082D998 /* PasswordValidateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839C2C289B23650082D998 /* PasswordValidateView.swift */; };
+		D4839C30289B242D0082D998 /* CustomTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839C2F289B242D0082D998 /* CustomTextFieldModifier.swift */; };
+		D4839C32289B2A3F0082D998 /* PhotosListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839C31289B2A3F0082D998 /* PhotosListView.swift */; };
+		D49A9F36289C61F0000F79B8 /* KeychainServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A9F35289C61F0000F79B8 /* KeychainServices.swift */; };
+		D49A9F38289C6DF3000F79B8 /* AddPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A9F37289C6DF3000F79B8 /* AddPhotosView.swift */; };
+		D49A9F3B289D1F0A000F79B8 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A9F3A289D1F0A000F79B8 /* PhotoDetailView.swift */; };
+		D49A9F3D289D4EBD000F79B8 /* SaveToLibrarySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A9F3C289D4EBD000F79B8 /* SaveToLibrarySheet.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D44A3F2F289845300043444D /* HidePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HidePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D44A3F32289845300043444D /* HidePhotosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidePhotosApp.swift; sourceTree = "<group>"; };
+		D44A3F34289845300043444D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D44A3F36289845320043444D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D44A3F39289845320043444D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D44A3F42289845640043444D /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		D44A3F46289846110043444D /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		D44A3F4928997F4B0043444D /* HidePhoto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HidePhoto.xcdatamodel; sourceTree = "<group>"; };
+		D44A3F4B28997F7A0043444D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D44A3F4E289981150043444D /* AddImageViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewModels.swift; sourceTree = "<group>"; };
+		D44A3F50289981250043444D /* ImageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewModel.swift; sourceTree = "<group>"; };
+		D44A3F53289984D90043444D /* ImageModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageModel+Extension.swift"; sourceTree = "<group>"; };
+		D44A3F552899BB520043444D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		D4839C19289B0D190082D998 /* AddFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderView.swift; sourceTree = "<group>"; };
+		D4839C1B289B0DB10082D998 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D4839C1E289B0DE50082D998 /* AddFolderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderViewModel.swift; sourceTree = "<group>"; };
+		D4839C22289B0EFC0082D998 /* Folder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Folder+Extension.swift"; sourceTree = "<group>"; };
+		D4839C24289B19E40082D998 /* FolderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListViewModel.swift; sourceTree = "<group>"; };
+		D4839C28289B1B370082D998 /* FoldersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersListView.swift; sourceTree = "<group>"; };
+		D4839C2C289B23650082D998 /* PasswordValidateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidateView.swift; sourceTree = "<group>"; };
+		D4839C2F289B242D0082D998 /* CustomTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldModifier.swift; sourceTree = "<group>"; };
+		D4839C31289B2A3F0082D998 /* PhotosListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListView.swift; sourceTree = "<group>"; };
+		D49A9F35289C61F0000F79B8 /* KeychainServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServices.swift; sourceTree = "<group>"; };
+		D49A9F37289C6DF3000F79B8 /* AddPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotosView.swift; sourceTree = "<group>"; };
+		D49A9F3A289D1F0A000F79B8 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		D49A9F3C289D4EBD000F79B8 /* SaveToLibrarySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToLibrarySheet.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D44A3F2C289845300043444D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D44A3F26289845300043444D = {
+			isa = PBXGroup;
+			children = (
+				D44A3F31289845300043444D /* HidePhotos */,
+				D44A3F30289845300043444D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D44A3F30289845300043444D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D44A3F2F289845300043444D /* HidePhotos.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D44A3F31289845300043444D /* HidePhotos */ = {
+			isa = PBXGroup;
+			children = (
+				D4839C2E289B24170082D998 /* CustomModifiers */,
+				D44A3F45289846040043444D /* Utils */,
+				D4839C1D289B0DBB0082D998 /* Constants */,
+				D44A3F4D289981020043444D /* ViewModels */,
+				D4839C18289B0D0B0082D998 /* Views */,
+				D44A3F44289845C90043444D /* Screens */,
+				D44A3F52289984C80043444D /* Models */,
+				D44A3F32289845300043444D /* HidePhotosApp.swift */,
+				D44A3F34289845300043444D /* ContentView.swift */,
+				D44A3F36289845320043444D /* Assets.xcassets */,
+				D44A3F4828997F4A0043444D /* HidePhoto.xcdatamodeld */,
+				D44A3F38289845320043444D /* Preview Content */,
+			);
+			path = HidePhotos;
+			sourceTree = "<group>";
+		};
+		D44A3F38289845320043444D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D44A3F39289845320043444D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D44A3F44289845C90043444D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D44A3F42289845640043444D /* Profile.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D44A3F45289846040043444D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D44A3F46289846110043444D /* PhotoPicker.swift */,
+				D44A3F4B28997F7A0043444D /* CoreDataManager.swift */,
+				D44A3F552899BB520043444D /* ImagePicker.swift */,
+				D49A9F35289C61F0000F79B8 /* KeychainServices.swift */,
+				D49A9F3C289D4EBD000F79B8 /* SaveToLibrarySheet.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D44A3F4D289981020043444D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D44A3F4E289981150043444D /* AddImageViewModels.swift */,
+				D44A3F50289981250043444D /* ImageListViewModel.swift */,
+				D4839C1E289B0DE50082D998 /* AddFolderViewModel.swift */,
+				D4839C24289B19E40082D998 /* FolderListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D44A3F52289984C80043444D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D44A3F53289984D90043444D /* ImageModel+Extension.swift */,
+				D4839C22289B0EFC0082D998 /* Folder+Extension.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4839C18289B0D0B0082D998 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4839C27289B1B280082D998 /* Photos */,
+				D4839C26289B1B220082D998 /* Folders */,
+				D4839C2C289B23650082D998 /* PasswordValidateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D4839C1D289B0DBB0082D998 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D4839C1B289B0DB10082D998 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		D4839C26289B1B220082D998 /* Folders */ = {
+			isa = PBXGroup;
+			children = (
+				D4839C19289B0D190082D998 /* AddFolderView.swift */,
+				D4839C28289B1B370082D998 /* FoldersListView.swift */,
+			);
+			path = Folders;
+			sourceTree = "<group>";
+		};
+		D4839C27289B1B280082D998 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				D4839C31289B2A3F0082D998 /* PhotosListView.swift */,
+				D49A9F37289C6DF3000F79B8 /* AddPhotosView.swift */,
+				D49A9F3A289D1F0A000F79B8 /* PhotoDetailView.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		D4839C2E289B24170082D998 /* CustomModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D4839C2F289B242D0082D998 /* CustomTextFieldModifier.swift */,
+			);
+			path = CustomModifiers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D44A3F2E289845300043444D /* HidePhotos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D44A3F3D289845320043444D /* Build configuration list for PBXNativeTarget "HidePhotos" */;
+			buildPhases = (
+				D44A3F2B289845300043444D /* Sources */,
+				D44A3F2C289845300043444D /* Frameworks */,
+				D44A3F2D289845300043444D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HidePhotos;
+			productName = HidePhotos;
+			productReference = D44A3F2F289845300043444D /* HidePhotos.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D44A3F27289845300043444D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					D44A3F2E289845300043444D = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = D44A3F2A289845300043444D /* Build configuration list for PBXProject "HidePhotos" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D44A3F26289845300043444D;
+			productRefGroup = D44A3F30289845300043444D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D44A3F2E289845300043444D /* HidePhotos */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D44A3F2D289845300043444D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D44A3F3A289845320043444D /* Preview Assets.xcassets in Resources */,
+				D44A3F37289845320043444D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D44A3F2B289845300043444D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D44A3F51289981250043444D /* ImageListViewModel.swift in Sources */,
+				D44A3F54289984D90043444D /* ImageModel+Extension.swift in Sources */,
+				D4839C1A289B0D190082D998 /* AddFolderView.swift in Sources */,
+				D49A9F38289C6DF3000F79B8 /* AddPhotosView.swift in Sources */,
+				D4839C23289B0EFC0082D998 /* Folder+Extension.swift in Sources */,
+				D44A3F35289845300043444D /* ContentView.swift in Sources */,
+				D4839C1F289B0DE50082D998 /* AddFolderViewModel.swift in Sources */,
+				D44A3F4C28997F7A0043444D /* CoreDataManager.swift in Sources */,
+				D49A9F3B289D1F0A000F79B8 /* PhotoDetailView.swift in Sources */,
+				D4839C32289B2A3F0082D998 /* PhotosListView.swift in Sources */,
+				D4839C2D289B23650082D998 /* PasswordValidateView.swift in Sources */,
+				D44A3F43289845640043444D /* Profile.swift in Sources */,
+				D4839C25289B19E40082D998 /* FolderListViewModel.swift in Sources */,
+				D4839C30289B242D0082D998 /* CustomTextFieldModifier.swift in Sources */,
+				D44A3F47289846110043444D /* PhotoPicker.swift in Sources */,
+				D4839C1C289B0DB10082D998 /* Constants.swift in Sources */,
+				D44A3F562899BB520043444D /* ImagePicker.swift in Sources */,
+				D44A3F4A28997F4B0043444D /* HidePhoto.xcdatamodeld in Sources */,
+				D44A3F4F289981150043444D /* AddImageViewModels.swift in Sources */,
+				D49A9F36289C61F0000F79B8 /* KeychainServices.swift in Sources */,
+				D44A3F33289845300043444D /* HidePhotosApp.swift in Sources */,
+				D4839C29289B1B370082D998 /* FoldersListView.swift in Sources */,
+				D49A9F3D289D4EBD000F79B8 /* SaveToLibrarySheet.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D44A3F3B289845320043444D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D44A3F3C289845320043444D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D44A3F3E289845320043444D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HidePhotos/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We want to save your photos in your library";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.verma.raj.HidePhotos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D44A3F3F289845320043444D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"HidePhotos/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "We want to save your photos in your library";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.verma.raj.HidePhotos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D44A3F2A289845300043444D /* Build configuration list for PBXProject "HidePhotos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D44A3F3B289845320043444D /* Debug */,
+				D44A3F3C289845320043444D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D44A3F3D289845320043444D /* Build configuration list for PBXNativeTarget "HidePhotos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D44A3F3E289845320043444D /* Debug */,
+				D44A3F3F289845320043444D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D44A3F4828997F4A0043444D /* HidePhoto.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D44A3F4928997F4B0043444D /* HidePhoto.xcdatamodel */,
+			);
+			currentVersion = D44A3F4928997F4B0043444D /* HidePhoto.xcdatamodel */;
+			path = HidePhoto.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D44A3F27289845300043444D /* Project object */;
+}
