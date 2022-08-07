@@ -18,7 +18,7 @@ struct ContentView: View {
                     }
                 }
             
-            Profile()
+            SettingView()
                 .tabItem {
                     VStack {
                         Image(systemName: "person")

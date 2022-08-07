@@ -11,17 +11,38 @@ import CryptoKit
 @main
 struct HidePhotosApp: App {
     
+    @Environment(\.scenePhase) var scenePhase
     let account = Constanst.account.rawValue
     let keyStore = KeyStoreManager()
+    
     @AppStorage("keysSet") var keySet = false
+    @AppStorage("isAuthenticated") var isAuthenticated: Bool = false
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .onAppear {
-                    storeKeys()
-                    UserDefaults.standard.set(account, forKey: Constanst.accountKey.rawValue)
-                }
+            if isAuthenticated {
+                ContentView()
+                    .onAppear {
+                        storeKeys()
+                        UserDefaults.standard.set(account, forKey: Constanst.accountKey.rawValue)
+                    }
+                    .onChange(of: scenePhase) { newPhase in
+                                    if newPhase == .active {
+                                        print("Active")
+                                    } else if newPhase == .inactive {
+                                      isAuthenticated = false
+                                        
+                                    } else if newPhase == .background {
+                                        isAuthenticated = false
+                                    }
+                                }
+                    .onDisappear {
+                        isAuthenticated = false
+                        
+                    }
+            } else {
+                AuthenticationView(isAuthenticated: $isAuthenticated)
+            }
         }
     }
     
