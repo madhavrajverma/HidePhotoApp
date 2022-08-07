@@ -25,19 +25,25 @@ struct PhotosListView: View {
     let folder: FolderViewModel
     
     var body: some View {
+        
         ZStack(alignment: passwordValidteView ? .center : .bottomTrailing) {
-            ScrollView(.vertical,showsIndicators: false) {
-                LazyVGrid(columns: column) {
-                    ForEach(imageListVM.imageViewModel,id:\.imageId) { image in
-                        NavigationLink(destination: PhotoDetailView(imageVM: image), label: {
-                           PhotosListRow(imageVm: image)
-                                .padding()
-                        })
+            
+            if imageListVM.imageViewModel.isEmpty {
+                EmptyView(image: "emptyImage", title: "Add a New Image")
+            }else {
+                ScrollView(.vertical,showsIndicators: false) {
+                    LazyVGrid(columns: column) {
+                        ForEach(imageListVM.imageViewModel,id:\.imageId) { image in
+                            NavigationLink(destination: PhotoDetailView(imageVM: image), label: {
+                               PhotosListRow(imageVm: image)
+                                    .padding()
+                            })
+                        }
+                        
                     }
-                    
                 }
+                .blur(radius: passwordValidteView ?  16 : 0)
             }
-            .blur(radius: passwordValidteView ?  16 : 0)
             
          
             

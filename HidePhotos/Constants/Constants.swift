@@ -10,4 +10,6 @@ import Foundation
 
 enum Constanst: String{
     case folderAuthentictedServies = "folderAuthentictedService"
+    case account = "com.hidephoto.genericpassword.key"
+    case accountKey = "account"
 }

@@ -29,17 +29,17 @@ struct NewSwiftView: View {
     
     func ecrptedData()  throws  {
         
-        guard let account = UserDefaults.standard.string(forKey: "account") else {
+        guard let account = UserDefaults.standard.string(forKey: Constanst.accountKey.rawValue) else {
             return
         }
         
         let keyStore = KeyStoreManager()
-        try? keyStore.deleteKey(account: account)
-        
-        let key = SymmetricKey(size: .bits256)
-        
       
-        try? keyStore.storeKey(key, account: account)
+        
+//        let key = SymmetricKey(size: .bits256)
+//
+//
+//        try? keyStore.storeKey(key, account: account)
         
         let image = UIImage(named: "Rectangle")
         guard let data = image?.pngData()  else {
@@ -49,8 +49,9 @@ struct NewSwiftView: View {
         let keyfromKeyChain:SymmetricKey = try keyStore.getKey(account: account)
         
         
-        let sealedBoxData = try! ChaChaPoly.seal(data, using: key).combined
+        let sealedBoxData = try! ChaChaPoly.seal(data, using: keyfromKeyChain).combined
         print("Encrypted Data  \(sealedBoxData)")
+        
         
         
         
@@ -58,7 +59,7 @@ struct NewSwiftView: View {
         
         let decryptedData = try! ChaChaPoly.open(sealedBox, using: keyfromKeyChain)
         
-       self.data = decryptedData
+        self.data = decryptedData
        
         print("Decrypted Data\(decryptedData)")
 

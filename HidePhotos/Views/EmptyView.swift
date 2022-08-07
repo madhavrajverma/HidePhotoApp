@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct EmptyView: View {
+    let image:String
+    let title:String
     var body: some View {
         VStack {
             
             
-            Text("Add New Folder")
+            Text(title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundColor(.gray)
             
-            Image("empty")
+            Image(image)
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth:.infinity)
@@ -35,6 +37,6 @@ struct EmptyView: View {
 
 struct EmptyView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyView()
+        EmptyView(image: "empty", title: "Add New Folder")
     }
 }

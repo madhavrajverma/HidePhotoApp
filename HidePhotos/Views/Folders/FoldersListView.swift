@@ -31,7 +31,7 @@ struct FoldersListView: View {
             ZStack(alignment:.bottomTrailing) {
                 
                 if folderListVM.folders.isEmpty {
-                    EmptyView()
+                    EmptyView(image: "empty", title: "Add New Folder")
                 }else {
                     ScrollView(.vertical,showsIndicators: false) {
                         HStack {

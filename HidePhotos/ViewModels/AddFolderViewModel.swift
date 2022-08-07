@@ -50,8 +50,6 @@ class AddFolderViewModel: ObservableObject {
     @Published  var folderType: FolderType = .blueFolder
     @Published var isDoesNotMatchedPassword = false
     
-   
-    
     
   var isEnabledButton: Bool {
         return !folderName.isEmpty && !password.isEmpty && !confirmPassword.isEmpty
@@ -72,21 +70,23 @@ class AddFolderViewModel: ObservableObject {
             folder.service = Constanst.folderAuthentictedServies.rawValue
             folder.folderType = folderType
             
+            // storing a password for folder in keychain
             do {
                 try keyChainService.storeGenericPasswordFor(account:account, service: Constanst.folderAuthentictedServies.rawValue, password: password)
                 CoreDataManager.shared.save()
+                
             } catch let error as KeychainWrapperError {
               print("Exception setting password: \(error.message ?? "no message")")
             } catch {
               print("An error occurred setting the password.")
             }
             
-            
-            if let password = try? keyChainService.getGenericPasswordFor(
-              account:account,
-              service: Constanst.folderAuthentictedServies.rawValue) {
-                print(password)
-            }
+            //
+//            if let password = try? keyChainService.getGenericPasswordFor(
+//              account:account,
+//              service: Constanst.folderAuthentictedServies.rawValue) {
+//                print(password)
+//            }
             
         }else {
             print("Password does not match")

@@ -6,16 +6,37 @@
 //
 
 import SwiftUI
+import CryptoKit
 
 @main
 struct HidePhotosApp: App {
-    let account = "com.hidephoto.genericpassword.key"
+    
+    let account = Constanst.account.rawValue
+    let keyStore = KeyStoreManager()
+    @AppStorage("keysSet") var keySet = false
+    
     var body: some Scene {
         WindowGroup {
-            NewSwiftView()
+            ContentView()
                 .onAppear {
-                    UserDefaults.standard.set(account, forKey: "account")
+                    storeKeys()
+                    UserDefaults.standard.set(account, forKey: Constanst.accountKey.rawValue)
                 }
+        }
+    }
+    
+    func storeKeys() {
+        
+        let key = SymmetricKey(size: .bits256)
+        if !keySet {
+            do {
+                try? keyStore.deleteKey(account: account)
+                try keyStore.storeKey(key, account: account)
+                print("Key Set Succefully")
+                keySet = true
+            }catch {
+                print("Unable to store Symmeteric Key")
+            }
         }
     }
 }
