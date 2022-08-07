@@ -34,8 +34,8 @@ struct PhotosListView: View {
                 ScrollView(.vertical,showsIndicators: false) {
                     LazyVGrid(columns: column) {
                         ForEach(imageListVM.imageViewModel,id:\.imageId) { image in
-                            NavigationLink(destination: PhotoDetailView(imageVM: image), label: {
-                               PhotosListRow(imageVm: image)
+                            NavigationLink(destination: PhotoDetailView(imageVM: image,imageListVM:imageListVM, folder: folder), label: {
+                                PhotosListRow(imageListVM:imageListVM, imageVm: image)
                                     .padding()
                             })
                         }
@@ -89,10 +89,11 @@ struct PhotosListView_Previews: PreviewProvider {
 
 
 struct PhotosListRow : View {
+    @ObservedObject var imageListVM:ImageListViewModel
     let imageVm:ImageViewModel
     var body: some View {
         VStack{
-            Image(uiImage: imageVm.uiImage)
+            Image(uiImage:imageListVM.getImage(encyptedData: imageVm.imageData))
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(10)

@@ -21,28 +21,7 @@ class ImageListViewModel:ObservableObject {
             self.imageViewModel = ImageModel.getAllImages(id: folder.folderId).map(ImageViewModel.init)
         }
     }
-}
-
-struct ImageViewModel {
     
-    let image : ImageModel
-    let keyStore = KeyStoreManager()
-    
-    var imageId: NSManagedObjectID {
-        return image.objectID
-    }
-    
-    var uiImage: UIImage {
-        do {
-            return try decrytImageFormData(encyptedData: self.image.imageData ?? Data())
-        }catch {
-            print("Unable to intialzie data to uiimage ")
-            return UIImage()
-        }
-    }
-    
-    
-    // decrypt Image from encrypted Data
     
     func decrytImageFormData(encyptedData:Data) throws -> UIImage {
         
@@ -62,4 +41,33 @@ struct ImageViewModel {
         print("Decrypted Data \(decryptedData)")
         return UIImage(data: decryptedData) ?? UIImage()
     }
+    
+    func getImage(encyptedData:Data) -> UIImage {
+        do {
+           return try decrytImageFormData(encyptedData: encyptedData)
+        }catch {
+            print("Unable to catch error")
+        }
+        return UIImage()
+    }
+    
+}
+
+struct ImageViewModel {
+    
+    let image : ImageModel
+    let keyStore = KeyStoreManager()
+    
+    var imageId: NSManagedObjectID {
+        return image.objectID
+    }
+    
+    var imageData: Data {
+        return self .image.imageData ?? Data()
+    }
+    
+    
+    // decrypt Image from encrypted Data
+    
+ 
 }

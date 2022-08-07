@@ -80,14 +80,6 @@ class AddFolderViewModel: ObservableObject {
             } catch {
               print("An error occurred setting the password.")
             }
-            
-            //
-//            if let password = try? keyChainService.getGenericPasswordFor(
-//              account:account,
-//              service: Constanst.folderAuthentictedServies.rawValue) {
-//                print(password)
-//            }
-            
         }else {
             print("Password does not match")
         }

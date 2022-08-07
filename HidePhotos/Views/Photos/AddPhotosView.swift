@@ -22,6 +22,7 @@ struct AddPhotosView: View {
     @ObservedObject var addImageVM: AddImageViewModel
     @ObservedObject var imageListVM: ImageListViewModel
     
+    
     @Environment(\.presentationMode) var presentaionMode
     
     let folder:FolderViewModel

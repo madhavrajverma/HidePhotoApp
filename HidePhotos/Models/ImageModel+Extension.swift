@@ -33,7 +33,7 @@ extension ImageModel {
     
     static func delete(image:ImageModel) {
              CoreDataManager.shared.viewContext.delete(image)
-             CoreDataManager.shared.save()
+//             CoreDataManager.shared.save()
     }
     
 }

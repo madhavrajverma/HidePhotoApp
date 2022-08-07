@@ -9,8 +9,11 @@ import SwiftUI
 
 struct PhotoDetailView: View {
     let imageVM : ImageViewModel
+    @ObservedObject var imageListVM: ImageListViewModel
     @State private var isAddToLibrary: Bool = false
     @Environment(\.presentationMode) var presentaionMode
+    
+    let folder: FolderViewModel
     var body: some View {
         VStack(spacing:20) {
             
@@ -21,7 +24,7 @@ struct PhotoDetailView: View {
                     .fontWeight(.bold)
                 Spacer()
             }
-            Image(uiImage: imageVM.uiImage)
+            Image(uiImage: imageListVM.getImage(encyptedData: imageVM.imageData) )
                 .resizable()
                 .scaledToFit()
                 .cornerRadius(20)
@@ -48,6 +51,8 @@ struct PhotoDetailView: View {
                     if let image = image {
                         ImageModel.delete(image: image)
                     }
+                    
+                    imageListVM.fetchImages(folder: folder)
                     presentaionMode.wrappedValue.dismiss()
                 }) {
                     Text("Delete")
@@ -65,14 +70,16 @@ struct PhotoDetailView: View {
             Spacer()
         }
         .sheet(isPresented: $isAddToLibrary) {
-            SaveToLibrarySheet(activityItems: [imageVM.uiImage], applicationActivities: nil)
+            SaveToLibrarySheet(activityItems: [imageListVM.getImage(encyptedData: imageVM.imageData)], applicationActivities: nil)
         }
 
     }
+    
 }
+
 
 struct PhotoDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoDetailView(imageVM: ImageViewModel(image: ImageModel(context: CoreDataManager.shared.viewContext)))
+        PhotoDetailView(imageVM: ImageViewModel(image: ImageModel(context: CoreDataManager.shared.viewContext)), imageListVM: ImageListViewModel(), folder: FolderViewModel(folder: Folder(context: CoreDataManager.shared.viewContext)))
     }
 }
