@@ -19,6 +19,7 @@ struct FoldersListView: View {
         GridItem(.flexible()),
     ]
     
+    @State private var editFolder:Bool = false
    
     @StateObject var folderListVM = FolderListViewModel()
     @State private var gridType: GridType = .grid
@@ -29,45 +30,63 @@ struct FoldersListView: View {
         NavigationView {
             ZStack(alignment:.bottomTrailing) {
                 
-                ScrollView(.vertical,showsIndicators: false) {
-                    HStack {
-                        Spacer()
-                        HStack(spacing:10) {
-                            Button(action: {
-                                withAnimation {
-                                    gridType = .grid
+                if folderListVM.folders.isEmpty {
+                    EmptyView()
+                }else {
+                    ScrollView(.vertical,showsIndicators: false) {
+                        HStack {
+                            Spacer()
+                            HStack(spacing:10) {
+                                Button(action: {
+                                    withAnimation {
+                                        gridType = .grid
+                                    }
+                                }) {
+                                    Image(systemName: "square.grid.2x2")
+                                        .font(.largeTitle)
+                                        .foregroundColor(gridType == .grid ? Color("btnColor") : Color.gray)
+                                        
                                 }
-                            }) {
-                                Image(systemName: "square.grid.2x2")
-                                    .font(.largeTitle)
-                                    .foregroundColor(gridType == .grid ? Color("btnColor") : Color.gray)
-                                    
-                            }
-                            
-                            Button(action: {
-                                withAnimation {
-                                    gridType = .list
+                                
+                                Button(action: {
+                                    withAnimation {
+                                        gridType = .list
+                                    }
+                                }) {
+                                    Image(systemName: "list.bullet")
+                                        .font(.largeTitle)
+                                        .foregroundColor(gridType == .list ? Color("btnColor") : Color.gray)
                                 }
-                            }) {
-                                Image(systemName: "list.bullet")
-                                    .font(.largeTitle)
-                                    .foregroundColor(gridType == .list ? Color("btnColor") : Color.gray)
                             }
                         }
+                        .padding(.trailing)
+                        
+                        HStack {
+                            Spacer()
+                            Button(action:{
+                                editFolder.toggle()
+                            }){
+                                Text(editFolder ? "Done" : "Edit")
+                                    .font(.body)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color("btnColor"))
+                                    
+                            }
+                            .disabled(folderListVM.folders.isEmpty)
+                        }.padding()
+                        
+                        if gridType == .grid {
+                            gridView
+                             
+                        }else {
+                            listView
+                        }
+                      
                     }
-                    .padding(.trailing)
-                    
-                    if gridType == .grid {
-                        gridView
-                         
-                    }else {
-                        listView
-                    }
-                  
                 }
                
                 Button(action:{
-                    showAddFolder = true
+                    showAddFolder.toggle()
                 }) {
                     Image(systemName: "plus")
                         .resizable()
@@ -90,25 +109,23 @@ struct FoldersListView: View {
             .onAppear {
                 folderListVM.fetchAllFolders()
             }
-            .navigationTitle("Your Files")
+            .navigationTitle(folderListVM.folders.isEmpty ? "HidePhoto"  : "Your Files")
         }
     }
     
     var gridView:some View {
         LazyVGrid(columns: column) {
             ForEach(folderListVM.folders,id:\.folderId) { folder in
-                NavigationLink(destination: PhotosListView(folderListVM: folderListVM, folder: folder)) {
-                    GridFolderView(folder: folder)
-                        .contextMenu {
-                            Button(role: .destructive) {
-                                deleteFolder(folderVM:folder)
-                            } label: {
-                               Label("Delete", systemImage: "trash")
-                            }
-
-                        }
-                     .padding()
-                  
+                
+                if editFolder {
+                  GridFolderView(folderListVM: folderListVM, editFolder: $editFolder, folder: folder)
+                        .padding()
+                } else {
+                    NavigationLink(destination: PhotosListView(folderListVM: folderListVM, folder: folder)) {
+                        GridFolderView(folderListVM: folderListVM, editFolder: $editFolder, folder: folder)
+                            .padding()
+                      
+                    }
                 }
             }
            
@@ -117,30 +134,24 @@ struct FoldersListView: View {
     
     var listView : some View {
             ForEach(folderListVM.folders,id:\.folderId) { folder in
-                NavigationLink(destination: PhotosListView(folderListVM: folderListVM, folder: folder)) {
-                    ListFolderView(folder: folder)
-                        .contextMenu {
-                            Button(role: .destructive) {
-                                deleteFolder(folderVM:folder)
-                            } label: {
-                               Label("Delete", systemImage: "trash")
-                            }
-
-                        }
+            
+                if editFolder {
+                    ListFolderView(folderListVM: folderListVM, editFolder: $editFolder, folder: folder)
                         .padding(.horizontal)
-                   
+                }else {
+                    NavigationLink(destination: PhotosListView(folderListVM: folderListVM, folder: folder)) {
+                        ListFolderView(folderListVM: folderListVM, editFolder: $editFolder, folder: folder)
+                            .padding(.horizontal)
+                       
+                    }
                 }
+                
+                
                 
     }
 }
     
-    private func deleteFolder(folderVM:FolderViewModel) {
-        let folder = Folder.folderById(id: folderVM.folderId)
-        if let folder = folder {
-            Folder.delete(folder: folder)
-        }
-    }
-    
+   
 }
     
 
@@ -152,20 +163,35 @@ struct FoldersListView_Previews: PreviewProvider {
 
 
 struct GridFolderView: View {
+    @ObservedObject var folderListVM : FolderListViewModel
+    @Binding var editFolder:Bool
     let folder: FolderViewModel
     var body: some View {
-        VStack(alignment:.leading,spacing: 20){
-            Image(folder.folderType.rawValue)
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(10)
-            HStack(spacing:20) {
-                Circle()
-                    .fill(folder.folderType.fill)
-                    .frame(width:20,height: 20)
-                Text(folder.name)
-                    .font(.headline)
-                    .fontWeight(.semibold)
+        ZStack(alignment: .bottomTrailing) {
+            VStack(alignment:.leading,spacing: 20){
+                Image(folder.folderType.rawValue)
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(10)
+                HStack(spacing:20) {
+                    Circle()
+                        .fill(folder.folderType.fill)
+                        .frame(width:20,height: 20)
+                    Text(folder.name)
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                }
+            }
+            
+            if editFolder {
+                Button(action: {
+                    folderListVM.deleteFolder(folderVM: folder)
+                    folderListVM.fetchAllFolders()
+                }) {
+                    Image(systemName: "trash")
+                        .font(.title)
+                        .foregroundColor(.red)
+                }
             }
         }
     }
@@ -173,6 +199,8 @@ struct GridFolderView: View {
 
 
 struct ListFolderView: View {
+    @ObservedObject var folderListVM : FolderListViewModel
+    @Binding var editFolder:Bool
     let folder: FolderViewModel
     var body: some View {
         HStack(spacing:20){
@@ -190,6 +218,19 @@ struct ListFolderView: View {
             Circle()
                 .fill(folder.folderType.fill)
                 .frame(width:24,height: 24)
+            
+            if editFolder {
+                Button(action: {
+                    folderListVM.deleteFolder(folderVM: folder)
+                    folderListVM.fetchAllFolders()
+                }) {
+                    Image(systemName: "trash")
+                        .font(.title)
+                        .foregroundColor(.red)
+                }
+            }
         }
+        
+        
     }
 }

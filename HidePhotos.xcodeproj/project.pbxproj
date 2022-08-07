@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D43E809F289EC5D6009F97E9 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E809E289EC5D6009F97E9 /* EmptyView.swift */; };
+		D43E80A1289F7575009F97E9 /* NewSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E80A0289F7575009F97E9 /* NewSwiftView.swift */; };
+		D43E80A3289F77F6009F97E9 /* StoreKeyInKeycahin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43E80A2289F77F6009F97E9 /* StoreKeyInKeycahin.swift */; };
 		D44A3F33289845300043444D /* HidePhotosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A3F32289845300043444D /* HidePhotosApp.swift */; };
 		D44A3F35289845300043444D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44A3F34289845300043444D /* ContentView.swift */; };
 		D44A3F37289845320043444D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44A3F36289845320043444D /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D43E809E289EC5D6009F97E9 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		D43E80A0289F7575009F97E9 /* NewSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSwiftView.swift; sourceTree = "<group>"; };
+		D43E80A2289F77F6009F97E9 /* StoreKeyInKeycahin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKeyInKeycahin.swift; sourceTree = "<group>"; };
 		D44A3F2F289845300043444D /* HidePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HidePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44A3F32289845300043444D /* HidePhotosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidePhotosApp.swift; sourceTree = "<group>"; };
 		D44A3F34289845300043444D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 				D44A3F552899BB520043444D /* ImagePicker.swift */,
 				D49A9F35289C61F0000F79B8 /* KeychainServices.swift */,
 				D49A9F3C289D4EBD000F79B8 /* SaveToLibrarySheet.swift */,
+				D43E80A2289F77F6009F97E9 /* StoreKeyInKeycahin.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -163,6 +170,8 @@
 				D4839C27289B1B280082D998 /* Photos */,
 				D4839C26289B1B220082D998 /* Folders */,
 				D4839C2C289B23650082D998 /* PasswordValidateView.swift */,
+				D43E809E289EC5D6009F97E9 /* EmptyView.swift */,
+				D43E80A0289F7575009F97E9 /* NewSwiftView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +285,7 @@
 				D44A3F54289984D90043444D /* ImageModel+Extension.swift in Sources */,
 				D4839C1A289B0D190082D998 /* AddFolderView.swift in Sources */,
 				D49A9F38289C6DF3000F79B8 /* AddPhotosView.swift in Sources */,
+				D43E809F289EC5D6009F97E9 /* EmptyView.swift in Sources */,
 				D4839C23289B0EFC0082D998 /* Folder+Extension.swift in Sources */,
 				D44A3F35289845300043444D /* ContentView.swift in Sources */,
 				D4839C1F289B0DE50082D998 /* AddFolderViewModel.swift in Sources */,
@@ -291,6 +301,8 @@
 				D44A3F562899BB520043444D /* ImagePicker.swift in Sources */,
 				D44A3F4A28997F4B0043444D /* HidePhoto.xcdatamodeld in Sources */,
 				D44A3F4F289981150043444D /* AddImageViewModels.swift in Sources */,
+				D43E80A3289F77F6009F97E9 /* StoreKeyInKeycahin.swift in Sources */,
+				D43E80A1289F7575009F97E9 /* NewSwiftView.swift in Sources */,
 				D49A9F36289C61F0000F79B8 /* KeychainServices.swift in Sources */,
 				D44A3F33289845300043444D /* HidePhotosApp.swift in Sources */,
 				D4839C29289B1B370082D998 /* FoldersListView.swift in Sources */,

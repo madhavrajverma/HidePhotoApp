@@ -37,6 +37,7 @@ extension Folder {
     
     static func delete(folder:Folder) {
              CoreDataManager.shared.viewContext.delete(folder)
+        CoreDataManager.shared.save()
     }
     
     

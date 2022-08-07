@@ -30,6 +30,18 @@ class FolderListViewModel : ObservableObject {
 
         return ""
     }
+    
+    func deleteFolder(folderVM:FolderViewModel) {
+    
+       let folder = Folder.folderById(id: folderVM.folderId)
+        let keyChainWrapper = KeychainWrapper()
+        try? keyChainWrapper.deleteGenericPasswordFor(account: folderVM.account, service: folderVM.service)
+       if let folder = folder {
+           Folder.delete(folder: folder)
+       }
+    
+   }
+   
 }
 
 struct FolderViewModel {
